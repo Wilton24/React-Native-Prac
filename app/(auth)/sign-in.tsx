@@ -4,8 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 const SignIn = () => {
     return (
         <View>
-            <Text>SignUp</Text>
-            <Link href="/sign-in">Don't have an account? Sign up</Link>
+            <Text>SignUp in the house of the Lord</Text>
+            <Link href="/(auth)/sign-in">Don't have an account? Sign up</Link>
         </View>
     );
 }

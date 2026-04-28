@@ -19,9 +19,20 @@ export default function App() {
       <Link href="/sign-in" className="mt-4 text-blue-500 font-bold">
         Sign-in
       </Link>
-      <Link href="/sign-up" className="mt-4 text-blue-500 font-bold">
+      <Link href="/subscriptions/spotify" className="mt-4 text-blue-500 font-bold">
         Sign-up
       </Link>
+
+      <Link href="/sign-up" className="mt-4 text-blue-500 font-bold">
+        Spotify Subscription
+      </Link>
+
+      {/* <Link href={{
+        pathname: "/subscriptions/[id]",
+        params: { id: "claude" },
+      }} className="mt-4 text-blue-500 font-bold">
+        Sign-up
+      </Link> */}
     </View>
   );
 }
