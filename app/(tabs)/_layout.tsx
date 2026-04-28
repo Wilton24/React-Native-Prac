@@ -1,10 +1,16 @@
 // app/(tabs)/_layout.tsx
 import { tabs } from "@/constants/data";
+import { colors, components } from "@/constants/theme";
 import clsx from "clsx";
 import { Tabs } from "expo-router";
 import { Image, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
+
+const tabBar = components.tabBar
 
 export default function TabsLayout() {
+    const insets = useSafeAreaInsets();
 
     const TabIcon = ({ focused, icon }: TabIconProps) => {
         return (
@@ -17,7 +23,29 @@ export default function TabsLayout() {
     }
 
     return (
-        <Tabs screenOptions={{ headerShown: false }}>
+        <Tabs screenOptions={{
+            headerShown: false,
+            tabBarShowLabel: false,
+            tabBarStyle: {
+                position: "absolute",
+                bottom: Math.max(insets.bottom, tabBar.horizontalInset),
+                height: tabBar.height,
+                marginHorizontal: tabBar.horizontalInset,
+                borderRadius: tabBar.radius,
+                // paddingVertical: tabBar.itemPaddingVertical,
+                backgroundColor: colors.primary,
+                borderTopWidth: 0,
+                elevation: 0,
+            },
+            tabBarItemStyle: {
+                paddingVertical: tabBar.height / 2 - tabBar.iconFrame / 1.6
+            },
+            tabBarIconStyle: {
+                width: tabBar.iconFrame,
+                height: tabBar.iconFrame,
+                alignItems: "center",
+            }
+        }}>
             {tabs.map((tab) => (
                 <Tabs.Screen
                     key={tab.name}
