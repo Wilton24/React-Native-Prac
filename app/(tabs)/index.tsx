@@ -1,10 +1,15 @@
 import "@/global.css";
 import { Link } from "expo-router";
+import { styled } from "nativewind";
 import { Text, View } from "react-native";
+import { SafeAreaView as RNSafeAreaView } from "react-native-safe-area-context";
+
+
+const SafeAreaView = styled(RNSafeAreaView)
 
 export default function App() {
   return (
-    <View className="flex-1 items-center justify-center bg-background">
+    <SafeAreaView className="flex-1 bg-background p-5">
       <View className="p-6 bg-blue-500 rounded-3xl border-4 border-blue-300 shadow-xl">
         <Text className="text-white text-2xl font-bold tracking-widest uppercase">
           NativeWind v5 is Working in da Haus! 🚀
@@ -27,12 +32,12 @@ export default function App() {
         Spotify Subscription
       </Link>
 
-      {/* <Link href={{
+      <Link href={{
         pathname: "/subscriptions/[id]",
         params: { id: "claude" },
       }} className="mt-4 text-blue-500 font-bold">
-        Sign-up
-      </Link> */}
-    </View>
+        Claude Max Subscription
+      </Link>
+    </SafeAreaView>
   );
 }

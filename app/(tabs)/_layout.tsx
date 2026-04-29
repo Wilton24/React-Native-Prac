@@ -16,7 +16,7 @@ export default function TabsLayout() {
         return (
             <View className="tabs-icon">
                 <View className={clsx('tabs-pill', focused && 'tabs-active')}>
-                    <Image source={icon} className="tabs-glyph" />
+                    <Image source={icon} resizeMode="contain" className="tabs-glyph" />
                 </View>
             </View>
         )

@@ -7,7 +7,7 @@ const options = { headerShown: false };
 
 export default function RootLayout() {
     return (
-        <Stack>
+        <Stack screenOptions={options}>
             {/* Hides the header for the grouping folders */}
             <Stack.Screen name="(tabs)" options={options} />
             <Stack.Screen name="(auth)" options={options} />
